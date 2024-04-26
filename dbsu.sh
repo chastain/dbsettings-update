@@ -1,6 +1,6 @@
 # Usage: dbsu.sh <path> <key1>=<value1> <key2>=<value2> ...
 #
-# Example: dbsu.sh /opt/app/ db.host=localhost db.port=3306
+# Example: dbsu.sh /apps/my-java-apps db.username=newusername db.password=newpassword
 
 if [ $# -lt 3 ]; then
   echo "Usage: $0 <path> <key1>=<value1> <key2>=<value2> ..."
