@@ -17,6 +17,7 @@ fi
 key_value_pairs=("${@:2}")
 
 for key_value_pair in "${key_value_pairs[@]}"; do
+
   key=$(echo "$key_value_pair" | cut -d'=' -f1)
   value=$(echo "$key_value_pair" | cut -d'=' -f2)
 
@@ -26,8 +27,8 @@ for key_value_pair in "${key_value_pairs[@]}"; do
     if grep -q "^$key=" "$file"; then
 
       contents=$(<"$file")
-
       updated_contents=""
+
       while IFS= read -r line; do
         if [[ "$line" == "$key="* ]]; then
           # Replace the value
